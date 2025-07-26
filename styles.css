@@ -1,0 +1,22 @@
+body {
+    width: 97%;
+    margin: auto;
+    background-color: #c0faf4
+}
+
+nav>ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+nav>ul>li>a {
+    text-decoration: none;
+}
+
+.dark-mode {
+  background-color: black !important;
+  color: white!important;
+}
