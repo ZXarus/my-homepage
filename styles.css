@@ -20,3 +20,20 @@ nav>ul>li>a {
   background-color: black !important;
   color: white!important;
 }
+main {
+  max-width: 700px;
+  margin: 2em auto;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+main h1 {
+  font-size: 2.2em;
+  margin-bottom: 0.5em;
+  color: #1a73e8;
+}
+
+main p {
+  margin-bottom: 1em;
+  font-size: 1.1em;
+}
