@@ -37,3 +37,10 @@ main p {
   margin-bottom: 1em;
   font-size: 1.1em;
 }
+
+footer {
+  margin-top: 3em;
+  padding: 1em;
+  background-color: #f8f9fa;
+  text-align: center;
+}
