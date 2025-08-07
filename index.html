@@ -4,22 +4,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Xarus | Home</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <title>Charan Reddy - Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <link href="styles.css" rel="stylesheet" />
-
-  <link href="styles.css" rel="stylesheet" />
-
-  <!-- Typed.js -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
-  <!-- ScrollReveal -->
   <script src="https://unpkg.com/scrollreveal"></script>
-</head>
-
   <style>
     .hero {
       background: linear-gradient(120deg, #0d6efd, #6f42c1);
@@ -56,7 +46,7 @@
 
   <header class="bg-dark text-white py-3">
     <div class="container d-flex justify-content-between align-items-center">
-      <h1 class="h4 mb-0">Xarus</h1>
+      <h1 class="h4 mb-0">Charan Reddy</h1>
       <nav>
         <ul class="nav">
           <li class="nav-item"><a class="nav-link text-white active" href="./index.html">Home</a></li>
@@ -69,35 +59,55 @@
   </header>
 
   <section class="hero">
-    
     <div class="container">
       <p>Hey, I'm Charan – a Computer Science student, developer-in-progress, and curious explorer of tech, ideas, and creativity.</p>
       <a href="./about.html" class="btn btn-light btn-lg me-3">Learn More</a>
       <a href="./now.html" class="btn btn-outline-light btn-lg">What I'm Doing Now</a>
     </div>
   </section>
-  
- <section class="text-center mb-5">
-      <h2 class="display-5">Hi, I'm <span id="typed-text" class="text-primary"></span></h2>
-      <p class="lead">Welcome to my space on the web 🌐</p>
-    </section> 
+
+  <section class="text-center mb-5">
+    <h2 class="display-5">Hi, I'm <span id="typed-text" class="text-primary"></span></h2>
+    <p class="lead">Welcome to my space on the web 🌐</p>
+  </section>
+
+  <!-- 📂 Projects Section -->
+  <section class="container my-5">
+    <h2 class="text-center"> Projects</h2>
+
+    <div class="mt-4">
+      <h3>📌 Portfolio Website</h3>
+      <p>A responsive personal website built with HTML and Bootstrap to showcase my skills and projects.</p>
+      <a href="https://my-homepage-ruby.vercel.app/" target="_blank">View Project</a>
+    </div>
+
+    <div class="mt-4">
+      <h3>ZX's Weather website</h3>
+      <p>Weather Website – Real-time weather forecast site using Node.js and external APIs.</p>
+      <a href="weatherapp-olive-rho.vercel.app" target="_blank">View Project</a>
+    </div>
+
+    <div class="mt-4">
+      <h3>Weather-farming</h3>
+      <p>Farming Assistant – Smart farming suggestions using weather APIs.</p>
+      <a href="https://shamrockagri.vercel.app/" target="_blank">View Project</a>
+    </div>
+  </section>
 
   <main class="container my-5 text-center">
     <h2>📬 Contact Me</h2>
     <p>You can reach out to me through email:</p>
-    <p><a href="mailto:38118114cs@gmail.com"><strong>Mail Me </strong></a> or connect on <a href="https://www.linkedin.com/in/charan-reddy-m-2694971b6/" target="_blank">LinkedIn</a>.</p>
+    <p><a href="mailto:38118114cs@gmail.com"><strong>Mail Me</strong></a> or connect on <a href="https://www.linkedin.com/in/charan-reddy-m-2694971b6/" target="_blank">LinkedIn</a>.</p>
   </main>
-    <script>
+
+  <script>
     const typed = new Typed("#typed-text", {
       strings: ["Charan Reddy", "a Web Developer", "an AI Explorer", "a Problem Solver"],
       typeSpeed: 60,
       backSpeed: 40,
       loop: true
     });
-  </script>
 
-  <!-- ScrollReveal animation -->
-  <script>
     ScrollReveal().reveal('section', {
       delay: 200,
       distance: '50px',
@@ -106,10 +116,8 @@
     });
   </script>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <footer>
-    <p>&copy; 2025 Xarus | Made with curiosity ✨</p>
+    <p>&copy; 2025 Charan Reddy | Made with curiosity ✨</p>
   </footer>
 
 </body>
