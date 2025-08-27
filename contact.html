@@ -63,13 +63,52 @@
   </main>
 
   <script>
+    // Enhanced ScrollReveal with blood effect
     ScrollReveal().reveal('.reveal', {
       delay: 200,
       distance: '50px',
       origin: 'bottom',
-      duration: 1000
+      duration: 1000,
+      interval: 200,
+      afterReveal: function(el) {
+        el.classList.add('revealed');
+      }
+    });
+
+    // Simple professional animations only
+
+    // Typing effect
+    function typeWriter(element, text, speed = 80) {
+      let i = 0;
+      element.innerHTML = '';
+      function type() {
+        if (i < text.length) {
+          element.innerHTML += text.charAt(i);
+          i++;
+          setTimeout(type, speed);
+        }
+      }
+      type();
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.classList.contains('typed')) {
+          const originalText = entry.target.textContent;
+          entry.target.classList.add('typed');
+          typeWriter(entry.target, originalText, 60);
+        }
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('h2, h4').forEach(h => {
+        observer.observe(h);
+      });
     });
   </script>
+
+
 
   <footer>
     <p>&copy; 2025 Charan Reddy | Made with curiosity ✨</p>

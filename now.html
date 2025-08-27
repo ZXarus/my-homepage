@@ -95,11 +95,15 @@
   </main>
 
   <script>
+    // Enhanced ScrollReveal with blood effect
     ScrollReveal().reveal('.reveal', {
       delay: 200,
       distance: '50px',
       origin: 'bottom',
-      duration: 1000
+      duration: 1000,
+      afterReveal: function(el) {
+        el.classList.add('revealed');
+      }
     });
     
     ScrollReveal().reveal('.now-card', {
@@ -107,9 +111,111 @@
       distance: '30px',
       origin: 'bottom',
       duration: 800,
-      interval: 100
+      interval: 150,
+      afterReveal: function(el) {
+        el.style.animation = 'cardBloodGlow 2s ease-in-out infinite';
+      }
+    });
+
+    // Create floating particles
+    function createParticles() {
+      const particlesContainer = document.createElement('div');
+      particlesContainer.className = 'particles';
+      document.body.appendChild(particlesContainer);
+
+      for (let i = 0; i < 25; i++) {
+        setTimeout(() => {
+          const particle = document.createElement('div');
+          particle.className = 'particle';
+          particle.style.left = Math.random() * 100 + '%';
+          particle.style.animationDelay = Math.random() * 6 + 's';
+          particle.style.animationDuration = (Math.random() * 3 + 4) + 's';
+          particlesContainer.appendChild(particle);
+
+          setTimeout(() => {
+            if (particle.parentNode) {
+              particle.parentNode.removeChild(particle);
+            }
+          }, 8000);
+        }, i * 150);
+      }
+    }
+
+    // Blood rain effect
+    function createBloodRain() {
+      for (let i = 0; i < 8; i++) {
+        setTimeout(() => {
+          const drop = document.createElement('div');
+          drop.style.position = 'fixed';
+          drop.style.top = '-10px';
+          drop.style.left = Math.random() * 100 + '%';
+          drop.style.width = '3px';
+          drop.style.height = '25px';
+          drop.style.background = 'linear-gradient(to bottom, #8b0000, #ff0000, transparent)';
+          drop.style.zIndex = '-1';
+          drop.style.animation = 'bloodFall 2.5s linear';
+          drop.style.boxShadow = '0 0 10px rgba(139, 0, 0, 0.8)';
+          document.body.appendChild(drop);
+
+          setTimeout(() => {
+            if (drop.parentNode) {
+              drop.parentNode.removeChild(drop);
+            }
+          }, 2500);
+        }, i * 400);
+      }
+    }
+
+    // Start effects
+    createParticles();
+    createBloodRain();
+    setInterval(createParticles, 6000);
+    setInterval(createBloodRain, 12000);
+
+    // Typing effect
+    function typeWriter(element, text, speed = 70) {
+      let i = 0;
+      element.innerHTML = '';
+      function type() {
+        if (i < text.length) {
+          element.innerHTML += text.charAt(i);
+          i++;
+          setTimeout(type, speed);
+        }
+      }
+      type();
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.classList.contains('typed')) {
+          const originalText = entry.target.textContent;
+          entry.target.classList.add('typed');
+          typeWriter(entry.target, originalText, 50);
+        }
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('h2, h5').forEach(h => {
+        observer.observe(h);
+      });
     });
   </script>
+
+  <style>
+    @keyframes bloodFall {
+      0% { transform: translateY(-10px); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+    
+    @keyframes cardBloodGlow {
+      0%, 100% { box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); }
+      50% { box-shadow: 0 5px 20px rgba(139, 0, 0, 0.6), 0 0 15px rgba(139, 0, 0, 0.4); }
+    }
+  </style>
 
   <footer>
     <p>&copy; 2025 Charan Reddy | Made with curiosity ✨</p>

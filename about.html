@@ -86,12 +86,77 @@
     </section>
   </main>
   <script>
+    // Enhanced ScrollReveal with blood effect
     ScrollReveal().reveal('.reveal', {
       delay: 200,
       distance: '50px',
       origin: 'bottom',
       duration: 1000,
-      interval: 200
+      interval: 200,
+      afterReveal: function(el) {
+        el.classList.add('revealed');
+      }
+    });
+
+    // Create floating particles
+    function createParticles() {
+      const particlesContainer = document.createElement('div');
+      particlesContainer.className = 'particles';
+      document.body.appendChild(particlesContainer);
+
+      for (let i = 0; i < 15; i++) {
+        setTimeout(() => {
+          const particle = document.createElement('div');
+          particle.className = 'particle';
+          particle.style.left = Math.random() * 100 + '%';
+          particle.style.animationDelay = Math.random() * 6 + 's';
+          particle.style.animationDuration = (Math.random() * 3 + 4) + 's';
+          particlesContainer.appendChild(particle);
+
+          // Remove particle after animation
+          setTimeout(() => {
+            if (particle.parentNode) {
+              particle.parentNode.removeChild(particle);
+            }
+          }, 8000);
+        }, i * 400);
+      }
+    }
+
+    // Start particle animation
+    createParticles();
+    setInterval(createParticles, 10000);
+
+    // Add typing effect to headings
+    function typeWriter(element, text, speed = 100) {
+      let i = 0;
+      element.innerHTML = '';
+      function type() {
+        if (i < text.length) {
+          element.innerHTML += text.charAt(i);
+          i++;
+          setTimeout(type, speed);
+        }
+      }
+      type();
+    }
+
+    // Apply typing effect to main headings when they come into view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.classList.contains('typed')) {
+          const originalText = entry.target.textContent;
+          entry.target.classList.add('typed');
+          typeWriter(entry.target, originalText, 80);
+        }
+      });
+    });
+
+    // Observe h2 elements for typing effect
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('h2').forEach(h2 => {
+        observer.observe(h2);
+      });
     });
   </script>
 

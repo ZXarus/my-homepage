@@ -12,11 +12,9 @@
   <link href="styles.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="https://unpkg.com/scrollreveal"></script>
-
 </head>
 
 <body>
-
   <header class="bg-dark text-white py-3">
     <div class="container d-flex justify-content-between align-items-center">
       <h1 class="h4 mb-0">Charan Reddy</h1>
@@ -85,8 +83,13 @@
       delay: 200,
       distance: '50px',
       origin: 'bottom',
-      duration: 1000
+      duration: 1000,
+      afterReveal: function(el) {
+        el.classList.add('revealed');
+      }
     });
+
+
   </script>
 
   <footer>
