@@ -4,74 +4,354 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Charan Reddy - Portfolio</title>
-  <meta name="description" content="Charan Reddy's personal portfolio showcasing projects, skills, and contact details.">
+  <title>Charan Reddy | Computer Science Student & Developer</title>
+  <meta name="description" content="Computer Science student at JNTUH specializing in AI, web development, and software engineering. View my projects and connect with me.">
   <meta name="author" content="Charan Reddy">
+  <meta name="keywords" content="Charan Reddy, Computer Science, Web Developer, AI, Machine Learning, JNTUH, Portfolio">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Charan Reddy | Computer Science Student & Developer">
+  <meta property="og:description" content="Computer Science student at JNTUH specializing in AI, web development, and software engineering. View my projects and connect with me.">
+  <meta property="og:image" content="https://my-homepage-ruby.vercel.app/logo.png">
+  <meta property="og:url" content="https://my-homepage-ruby.vercel.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Charan Reddy Portfolio">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Charan Reddy | Computer Science Student & Developer">
+  <meta name="twitter:description" content="Computer Science student at JNTUH specializing in AI, web development, and software engineering.">
+  <meta name="twitter:image" content="https://my-homepage-ruby.vercel.app/logo.png">
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="styles.css" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="https://unpkg.com/scrollreveal"></script>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Charan Reddy",
+    "jobTitle": "Computer Science Student & Web Developer",
+    "url": "https://my-homepage-ruby.vercel.app/",
+    "sameAs": [
+      "https://www.linkedin.com/in/charan-reddy-m-2694971b6/",
+      "https://github.com/ZXarus"
+    ],
+    "alumniOf": "JNTUH",
+    "email": "38118114cs@gmail.com",
+    "knowsAbout": ["Web Development", "JavaScript", "Python", "AI", "Machine Learning"]
+  }
+  </script>
 </head>
 
-<body>
-  <header class="bg-dark text-white py-3">
+<body data-theme="dark">
+  <!-- Loading Screen -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-content">
+      <div class="loading-spinner"></div>
+      <p>Loading...</p>
+    </div>
+  </div>
+  <header class="bg-dark text-white py-3 fixed-top">
     <div class="container d-flex justify-content-between align-items-center">
       <h1 class="h4 mb-0">Charan Reddy</h1>
       <nav>
         <ul class="nav">
-          <li class="nav-item"><a class="nav-link text-white active" href="./index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="./about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="./contact.html">Contact</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="./now.html">Now</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <section class="hero">
+  <!-- Home Section -->
+  <section id="home" class="hero">
+    <div class="particles"></div>
     <div class="container">
-      <p>Hey, I'm Charan – a Computer Science student, developer-in-progress, and curious explorer of tech, ideas, and creativity.</p>
-      <a href="./about.html" class="btn btn-light btn-lg me-3">Learn More</a>
-      <a href="./now.html" class="btn btn-outline-light btn-lg">What I'm Doing Now</a>
+      <h1 class="fade-in-up">Hi, I'm <span id="typed-text" class="text-primary"></span></h1>
+      <p class="lead fade-in-up" style="animation-delay: 0.2s;">Computer Science Student | Web Developer | AI Enthusiast</p>
+      <p class="fade-in-up" style="animation-delay: 0.4s;">Passionate about creating innovative solutions through code and exploring the frontiers of technology.</p>
+      <div class="fade-in-up" style="animation-delay: 0.6s;">
+        <a href="#about" class="btn btn-light btn-lg me-3 pulse-btn">Learn More</a>
+        <a href="#projects" class="btn btn-outline-light btn-lg pulse-btn">View Projects</a>
+      </div>
     </div>
   </section>
 
-  <section class="text-center mb-5">
-    <h2 class="display-5">Hi, I'm <span id="typed-text" class="text-primary"></span></h2>
-    <p class="lead">Welcome to my space on the web 🌐</p>
+  <!-- About Section -->
+  <section id="about" class="py-3">
+    <div class="container">
+      <h2 class="text-center mb-3">🌟 About Me</h2>
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <p class="lead">
+            I'm <strong>Charan Reddy</strong>, a Computer Science student at JNTUH who enjoys building web applications and working on coding projects. What started as curiosity about how websites work has grown into a genuine passion for development.
+          </p>
+          <p>
+            I spend most of my time learning new technologies and putting them to practice through projects. Right now, I'm focused on <em>web development</em> and <em>JavaScript frameworks</em>, while also exploring <em>AI applications</em> in everyday problems.
+          </p>
+          <p>
+            When I'm not coding, you'll find me taking online courses like CS50, experimenting with new tools, or working on side projects. I believe the best way to learn programming is by building things, which is why I try to create something new whenever I learn a concept.
+          </p>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="mt-5">
+        <h3 class="text-center mb-3">💻 Technical Skills</h3>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="skill-card p-4 rounded">
+              <h5>🔥 Programming Languages</h5>
+              <div class="skill-list">
+                <span class="skill-tag animate-tag" style="animation-delay: 0.1s;">Java</span>
+                <span class="skill-tag animate-tag" style="animation-delay: 0.2s;">Python</span>
+                <span class="skill-tag animate-tag" style="animation-delay: 0.3s;">JavaScript</span>
+                <span class="skill-tag animate-tag" style="animation-delay: 0.4s;">C/C++</span>
+              </div>
+              <div class="skill-progress">
+                <div class="progress-bar" data-width="85"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="skill-card p-4 rounded">
+              <h5>🌐 Web Technologies</h5>
+              <div class="skill-list">
+                <span class="skill-tag animate-tag" style="animation-delay: 0.1s;">HTML</span>
+                <span class="skill-tag animate-tag" style="animation-delay: 0.2s;">CSS</span>
+                <span class="skill-tag animate-tag" style="animation-delay: 0.3s;">Bootstrap</span>
+              </div>
+              <div class="skill-progress">
+                <div class="progress-bar" data-width="90"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="skill-card p-4 rounded">
+              <h5>🛠️ Tools & Platforms</h5>
+              <div class="skill-list">
+                <span class="skill-tag animate-tag" style="animation-delay: 0.1s;">Git</span>
+                <span class="skill-tag animate-tag" style="animation-delay: 0.2s;">GitHub</span>
+                <span class="skill-tag animate-tag" style="animation-delay: 0.3s;">VS Code</span>
+              </div>
+              <div class="skill-progress">
+                <div class="progress-bar" data-width="80"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Currently Learning -->
+      <div class="mt-5">
+        <h3 class="text-center mb-4">🌱 Currently Learning</h3>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="learning-card p-3 rounded">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h6 class="mb-0">React.js</h6>
+                <span class="badge bg-primary">75%</span>
+              </div>
+              <div class="progress mb-2" style="height: 8px;">
+                <div class="progress-bar bg-gradient" style="width: 75%"></div>
+              </div>
+              <small class="text-muted">Building interactive UIs</small>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="learning-card p-3 rounded">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h6 class="mb-0">Node.js</h6>
+                <span class="badge bg-success">60%</span>
+              </div>
+              <div class="progress mb-2" style="height: 8px;">
+                <div class="progress-bar bg-success" style="width: 60%"></div>
+              </div>
+              <small class="text-muted">Backend development</small>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="learning-card p-3 rounded">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h6 class="mb-0">Database </h6>
+                <span class="badge bg-warning">65%</span>
+              </div>
+              <div class="progress mb-2" style="height: 8px;">
+                <div class="progress-bar bg-warning" style="width: 55%"></div>
+              </div>
+              <small class="text-muted">SQL & NoSQL databases</small>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="learning-card p-3 rounded">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h6 class="mb-0">Machine Learning</h6>
+                <span class="badge bg-info">5%</span>
+              </div>
+              <div class="progress mb-2" style="height: 8px;">
+                <div class="progress-bar bg-info" style="width: 5%"></div>
+              </div>
+              <small class="text-muted">AI algorithms & models</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- 📂 Projects Section -->
-  <section class="container my-5">
-    <h2 class="text-center"> Projects</h2>
+  <!-- Projects Section -->
+  <section id="projects" class="py-3">
+    <div class="container">
+      <h2 class="text-center mb-3">📂 Featured Projects</h2>
+      <p class="text-center mb-4">A selection of projects demonstrating my technical expertise</p>
+      
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="skill-card p-4 rounded h-100 project-card">
+            <div class="project-icon">🌤️</div>
+            <h3>Weather Dashboard</h3>
+            <div class="project-tags mb-3">
+              <span class="skill-tag animate-tag" style="animation-delay: 0.1s;">Node.js</span>
+              <span class="skill-tag animate-tag" style="animation-delay: 0.2s;">API</span>
+              <span class="skill-tag animate-tag" style="animation-delay: 0.3s;">JavaScript</span>
+            </div>
+            <p>A comprehensive weather dashboard providing real-time forecasts, interactive visualizations, and detailed meteorological data through API integration.</p>
+            <div class="mt-auto">
+              <a href="https://rock-weather.vercel.app/" target="_blank" class="btn btn-primary pulse-btn">Live Demo</a>
+            </div>
+          </div>
+        </div>
 
-    <div class="mt-4">
-      <h3>📌 Portfolio Website</h3>
-      <p>A responsive personal website built with HTML and Bootstrap to showcase my skills and projects.</p>
-      <a href="https://my-homepage-ruby.vercel.app/" target="_blank">View Project</a>
-    </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="skill-card p-4 rounded h-100 project-card">
+            <div class="project-icon">🌾</div>
+            <h3>Smart Farming</h3>
+            <div class="project-tags mb-3">
+              <span class="skill-tag animate-tag" style="animation-delay: 0.1s;">JavaScript</span>
+              <span class="skill-tag animate-tag" style="animation-delay: 0.2s;">HTML</span>
+              <span class="skill-tag animate-tag" style="animation-delay: 0.3s;">CSS</span>
+            </div>
+            <p>A smart farming platform that provides farmers with weather data and agricultural insights to optimize crop management and farming decisions.</p>
+            <div class="mt-auto">
+              <a href="https://shamrockagri.vercel.app/" target="_blank" class="btn btn-primary pulse-btn">Live Demo</a>
+            </div>
+          </div>
+        </div>
 
-    <div class="mt-4">
-      <h3>ZX's Weather website</h3>
-      <p>Weather Website – Real-time weather forecast site using Node.js and external APIs.</p>
-      <a href="https://rock-weather.vercel.app/" target="_blank">View Project</a>
-    </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="skill-card p-4 rounded h-100 project-card">
+            <div class="project-logo">
+              <img src="logo.png" alt="PropGrowthX Logo" class="project-logo-img">
+            </div>
+            <h3>PropGrowthX</h3>
+            <div class="project-tags mb-3">
+              <span class="skill-tag animate-tag" style="animation-delay: 0.1s;">React</span>
+              <span class="skill-tag animate-tag" style="animation-delay: 0.2s;">JavaScript</span>
+              <span class="skill-tag animate-tag" style="animation-delay: 0.3s;">CSS</span>
+            </div>
+            <p>A modern real estate platform for property management and growth tracking, featuring interactive dashboards and comprehensive property analytics. I'm currently working on this new startup and it's still under development.</p>
+            <div class="mt-auto">
+              <a href="https://prop-growth-x1.vercel.app/" target="_blank" class="btn btn-primary pulse-btn">Live Demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <div class="mt-4">
-      <h3>Weather-farming</h3>
-      <p>Farming Assistant – Smart farming suggestions using weather APIs.</p>
-      <a href="https://shamrockagri.vercel.app/" target="_blank">View Project</a>
+      <!-- Current Focus -->
+      <div class="mt-5">
+        <h3 class="text-center mb-4">🕒 What I'm Doing Now</h3>
+        <div class="row g-3">
+          <div class="col-md-6 col-lg-3">
+            <div class="now-card p-3 rounded text-center bounce-card" style="animation-delay: 0.1s;">
+              <div class="now-icon education-icon">🎓</div>
+              <h5>Education</h5>
+              <p>B.Tech CSE at JNTUH</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="now-card p-3 rounded text-center bounce-card" style="animation-delay: 0.2s;">
+              <div class="now-icon laptop-icon">💻</div>
+              <h5>Learning</h5>
+              <p>CS50 Web Development</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="now-card p-3 rounded text-center bounce-card" style="animation-delay: 0.3s;">
+              <div class="now-icon robot-icon">🤖</div>
+              <h5>Exploring</h5>
+              <p>AI & Web Technologies</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="now-card p-3 rounded text-center bounce-card" style="animation-delay: 0.4s;">
+              <div class="now-icon rocket-icon">🚀</div>
+              <h5>Building</h5>
+              <p>Full-Stack Projects</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <main class="container my-5 text-center">
-    <h2>📬 Contact Me</h2>
-    <p>You can reach out to me through email:</p>
-    <p><a href="mailto:38118114cs@gmail.com"><strong>Mail Me</strong></a> or connect on <a href="https://www.linkedin.com/in/charan-reddy-m-2694971b6/" target="_blank">LinkedIn</a>.</p>
-  </main>
+  <!-- Contact Section -->
+  <section id="contact" class="py-3">
+    <div class="container">
+      <h2 class="text-center mb-3">📬 Let's Connect</h2>
+      <p class="text-center mb-4">Open to discussing opportunities and connecting with fellow developers.</p>
+      
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-8">
+          <div class="contact-card p-4 rounded text-center glow-card">
+            <div class="contact-icon">📧</div>
+            <h4>Email</h4>
+            <p>Drop me a line anytime</p>
+            <a href="mailto:38118114cs@gmail.com" class="btn btn-primary pulse-btn">Send Email</a>
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="contact-card p-4 rounded text-center glow-card">
+            <div class="contact-icon">💼</div>
+            <h4>LinkedIn</h4>
+            <p>Let's connect professionally</p>
+            <a href="https://www.linkedin.com/in/charan-reddy-m-2694971b6/" target="_blank" class="btn btn-outline-light pulse-btn">View Profile</a>
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="contact-card p-4 rounded text-center glow-card">
+            <div class="contact-icon">💻</div>
+            <h4>GitHub</h4>
+            <p>Check out my code</p>
+            <a href="https://github.com/ZXarus" target="_blank" class="btn btn-outline-light pulse-btn">View Projects</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <script>
+    // Loading screen
+    window.addEventListener('load', () => {
+      const loadingScreen = document.getElementById('loading-screen');
+      loadingScreen.style.opacity = '0';
+      setTimeout(() => {
+        loadingScreen.style.display = 'none';
+      }, 500);
+    });
+
+    // Typed.js for hero section
     const typed = new Typed("#typed-text", {
       strings: ["Charan Reddy", "a Web Developer", "an AI Explorer", "a Problem Solver"],
       typeSpeed: 60,
@@ -79,21 +359,136 @@
       loop: true
     });
 
+    // Floating particles animation
+    function createParticles() {
+      const particles = document.querySelector('.particles');
+      for (let i = 0; i < 30; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 20 + 's';
+        particles.appendChild(particle);
+      }
+    }
+    createParticles();
+
+    // Progress bar animation
+    function animateProgressBars() {
+      const progressBars = document.querySelectorAll('.progress-bar');
+      progressBars.forEach(bar => {
+        const width = bar.getAttribute('data-width');
+        setTimeout(() => {
+          bar.style.width = width + '%';
+        }, 500);
+      });
+    }
+
+    // ScrollReveal animations
     ScrollReveal().reveal('section', {
       delay: 200,
       distance: '50px',
       origin: 'bottom',
       duration: 1000,
-      afterReveal: function(el) {
-        el.classList.add('revealed');
-      }
+      interval: 200
+    });
+
+    ScrollReveal().reveal('.skill-card, .now-card, .contact-card', {
+      delay: 100,
+      distance: '30px',
+      origin: 'bottom',
+      duration: 800,
+      interval: 100,
+      afterReveal: animateProgressBars
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Active navigation highlighting
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+      
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Skill tag hover effects
+    document.querySelectorAll('.skill-tag').forEach(tag => {
+      tag.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.1) rotate(3deg)';
+      });
+      tag.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1) rotate(0deg)';
+      });
+    });
+
+    // Enhanced project card hover effects
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-10px) scale(1.02)';
+        this.style.boxShadow = '0 20px 40px rgba(220, 20, 60, 0.3)';
+      });
+      card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+        this.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.08)';
+      });
     });
 
 
+
+    // Loading animations for cards
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe all cards for loading animation
+    document.querySelectorAll('.skill-card, .project-card, .now-card, .contact-card, .learning-card').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = 'all 0.6s ease';
+      observer.observe(card);
+    });
   </script>
 
   <footer>
-    <p>&copy; 2025 Charan Reddy | Made with curiosity ✨</p>
+    <div class="container text-center py-4">
+      <p>&copy; 2025 Charan Reddy. All rights reserved.</p>
+      <p class="small text-muted">Crafted with passion for technology and innovation</p>
+    </div>
   </footer>
 
 </body>
