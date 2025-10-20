@@ -856,22 +856,7 @@ h1, h2, h3, h4, h5, p, li {
   }
 }
 
-/* Pulse button animation */
-.pulse-btn {
-  animation: pulse 2s infinite;
-}
 
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(220, 20, 60, 0.4);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(220, 20, 60, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(220, 20, 60, 0);
-  }
-}
 
 /* Skill progress bars */
 .skill-progress {
@@ -1263,7 +1248,6 @@ h1, h2, h3, h4, h5, p, li {
   font-size: 3rem;
   margin-bottom: 15px;
   display: block;
-  animation: pulse 2s infinite;
 }
 
 /* Professional Loading Screen */
@@ -1418,19 +1402,6 @@ footer p {
   font-size: 3rem;
   margin-bottom: 15px;
   display: block;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
 }
 
 /* Enhanced section animations */
@@ -2008,14 +1979,8 @@ body.mode-casual .skill-tag {
   font-weight: 600;
   border-radius: 20px !important;
   box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
-  animation: tagPulse 2s ease-in-out infinite;
   position: relative;
   overflow: hidden;
-}
-
-@keyframes tagPulse {
-  0%, 100% { transform: scale(1); box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4); }
-  50% { transform: scale(1.05); box-shadow: 0 6px 20px rgba(139, 92, 246, 0.6); }
 }
 
 body.mode-casual .skill-tag::after {
@@ -2043,12 +2008,6 @@ body.mode-casual .btn-primary {
   border-color: #8b5cf6 !important;
   box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4) !important;
   border-radius: 25px !important;
-  animation: buttonGlow 2s ease-in-out infinite alternate;
-}
-
-@keyframes buttonGlow {
-  from { box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4); }
-  to { box-shadow: 0 8px 30px rgba(139, 92, 246, 0.8); }
 }
 
 body.mode-casual h2, 
