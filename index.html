@@ -61,16 +61,25 @@
     </div>
   </div>
   <header class="bg-dark text-white py-3 fixed-top">
-    <div class="container d-flex justify-content-between align-items-center">
-      <h1 class="h4 mb-0">Charan Reddy</h1>
-      <nav>
-        <ul class="nav">
-          <li class="nav-item"><a class="nav-link text-white" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <h1 class="h4 mb-0">Charan Reddy</h1>
+        <nav>
+          <ul class="nav">
+            <li class="nav-item"><a class="nav-link text-white" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#experience">Experience</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#resume">Resume</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <!-- Mode Selector -->
+      <div class="mode-selector text-center">
+        <button class="mode-btn active" data-mode="recruiter">💼 Professional</button>
+        <button class="mode-btn" data-mode="casual">👋 Casual</button>
+      </div>
     </div>
   </header>
 
@@ -79,8 +88,25 @@
     <div class="particles"></div>
     <div class="container">
       <h1 class="fade-in-up">Hi, I'm <span id="typed-text" class="text-primary"></span></h1>
-      <p class="lead fade-in-up" style="animation-delay: 0.2s;">Computer Science Student | Web Developer | AI Enthusiast</p>
-      <p class="fade-in-up" style="animation-delay: 0.4s;">Passionate about creating innovative solutions through code and exploring the frontiers of technology.</p>
+      
+      <!-- Professional Mode -->
+      <div class="mode-content recruiter-mode">
+        <p class="lead fade-in-up" style="animation-delay: 0.2s;">Computer Science Student | JNTUH</p>
+        <p class="fade-in-up" style="animation-delay: 0.4s;">Experienced in Web Development, Programming & AI Technologies</p>
+      </div>
+      
+      <!-- Casual Mode -->
+      <div class="mode-content casual-mode" style="display: none;">
+        <p class="lead fade-in-up" style="animation-delay: 0.2s;">Computer Science Student | Web Developer | AI Enthusiast</p>
+        <p class="fade-in-up" style="animation-delay: 0.4s;">Passionate about creating innovative solutions through code and exploring the frontiers of technology.</p>
+      </div>
+      
+      <!-- Developer Mode -->
+      <div class="mode-content developer-mode" style="display: none;">
+        <p class="lead fade-in-up" style="animation-delay: 0.2s;">Full-Stack Developer | Code Enthusiast | Problem Solver</p>
+        <p class="fade-in-up" style="animation-delay: 0.4s;">Building awesome web apps with React, Node.js, and exploring ML algorithms!</p>
+      </div>
+      
       <div class="fade-in-up" style="animation-delay: 0.6s;">
         <a href="#about" class="btn btn-light btn-lg me-3 pulse-btn">Learn More</a>
         <a href="#projects" class="btn btn-outline-light btn-lg pulse-btn">View Projects</a>
@@ -91,28 +117,44 @@
   <!-- About Section -->
   <section id="about" class="py-3">
     <div class="container">
-      <h2 class="text-center mb-3">🌟 About Me</h2>
+      <h2 class="text-center mb-3"> About Me</h2>
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <p class="lead">
-            I'm <strong>Charan Reddy</strong>, a Computer Science student at JNTUH who enjoys building web applications and working on coding projects. What started as curiosity about how websites work has grown into a genuine passion for development.
-          </p>
-          <p>
-            I spend most of my time learning new technologies and putting them to practice through projects. Right now, I'm focused on <em>web development</em> and <em>JavaScript frameworks</em>, while also exploring <em>AI applications</em> in everyday problems.
-          </p>
-          <p>
-            When I'm not coding, you'll find me taking online courses like CS50, experimenting with new tools, or working on side projects. I believe the best way to learn programming is by building things, which is why I try to create something new whenever I learn a concept.
-          </p>
+          <!-- Professional Mode -->
+          <div class="mode-content recruiter-mode">
+            <p class="lead">
+              <strong>Computer Science Student</strong> at JNTUH with hands-on experience in web development, programming, and AI technologies. Proven track record of delivering functional applications and solving complex problems.
+            </p>
+            <p>
+              • <strong>Almost an year</strong> of programming experience<br>
+              • <strong>Multiple deployed projects</strong> with real-world applications<br>
+              • <strong>Strong foundation</strong> in algorithms and data structures<br>
+              • <strong>Self-motivated learner</strong> with continuous skill development
+            </p>
+          </div>
+          
+          <!-- Casual Mode -->
+          <div class="mode-content casual-mode" style="display: none;">
+            <p class="lead">
+              I'm <strong>Charan Reddy</strong>, a Computer Science student at JNTUH who enjoys building web applications and working on coding projects. What started as curiosity about how websites work has grown into a genuine passion for development.
+            </p>
+            <p>
+              I spend most of my time learning new technologies and putting them to practice through projects. Right now, I'm focused on <em>web development</em> and <em>JavaScript frameworks</em>, while also exploring <em>AI applications</em> in everyday problems.
+            </p>
+            <p>
+              When I'm not coding, you'll find me taking online courses like CS50, experimenting with new tools, or working on side projects. I believe the best way to learn programming is by building things, which is why I try to create something new whenever I learn a concept.
+            </p>
+          </div>
         </div>
       </div>
 
       <!-- Skills -->
       <div class="mt-5">
-        <h3 class="text-center mb-3">💻 Technical Skills</h3>
+        <h3 class="text-center mb-3">Technical Skills</h3>
         <div class="row g-3">
           <div class="col-md-4">
             <div class="skill-card p-4 rounded">
-              <h5>🔥 Programming Languages</h5>
+              <h5> Programming Languages</h5>
               <div class="skill-list">
                 <span class="skill-tag animate-tag" style="animation-delay: 0.1s;">Java</span>
                 <span class="skill-tag animate-tag" style="animation-delay: 0.2s;">Python</span>
@@ -126,11 +168,12 @@
           </div>
           <div class="col-md-4">
             <div class="skill-card p-4 rounded">
-              <h5>🌐 Web Technologies</h5>
+              <h5>Web Technologies</h5>
               <div class="skill-list">
                 <span class="skill-tag animate-tag" style="animation-delay: 0.1s;">HTML</span>
                 <span class="skill-tag animate-tag" style="animation-delay: 0.2s;">CSS</span>
                 <span class="skill-tag animate-tag" style="animation-delay: 0.3s;">Bootstrap</span>
+                <span class="skill-tag animate-tag" style="animation-delay: 0.4s;">JavaScript</span>
               </div>
               <div class="skill-progress">
                 <div class="progress-bar" data-width="90"></div>
@@ -139,7 +182,7 @@
           </div>
           <div class="col-md-4">
             <div class="skill-card p-4 rounded">
-              <h5>🛠️ Tools & Platforms</h5>
+              <h5>Tools & Platforms</h5>
               <div class="skill-list">
                 <span class="skill-tag animate-tag" style="animation-delay: 0.1s;">Git</span>
                 <span class="skill-tag animate-tag" style="animation-delay: 0.2s;">GitHub</span>
@@ -153,18 +196,87 @@
         </div>
       </div>
       
+      <!-- Achievements -->
+      <div class="mt-5">
+        <h3 class="text-center mb-4"> Achievements</h3>
+        
+        <!-- Professional Mode -->
+        <div class="mode-content recruiter-mode">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="achievement-card p-3 rounded">
+                <h5>CS50 Certification</h5>
+                <p class="text-muted">Harvard University - Computer Science</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="achievement-card p-3 rounded">
+                <h5>100% Project Success Rate</h5>
+                <p class="text-muted">All projects deployed and working at all times</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="achievement-card p-3 rounded">
+                <h5>4+ Production Applications</h5>
+                <p class="text-muted">Live web applications serving users</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="achievement-card p-3 rounded">
+                <h5>Technical Leadership</h5>
+                <p class="text-muted">Led development of startup platform and teams</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Casual Mode -->
+        <div class="mode-content casual-mode" style="display: none;">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="achievement-card p-3 rounded">
+                <div class="achievement-icon">🎓</div>
+                <h5>CS50 Graduate!</h5>
+                <p class="text-muted">Completed Harvard's legendary CS course</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="achievement-card p-3 rounded">
+                <div class="achievement-icon">🎉</div>
+                <h5>Happy Clients</h5>
+                <p class="text-muted">Every project delivered with smiles</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="achievement-card p-3 rounded">
+                <div class="achievement-icon">💻</div>
+                <h5>Code Enthusiast</h5>
+                <p class="text-muted">Building cool stuff since day one</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="achievement-card p-3 rounded">
+                <div class="achievement-icon">🌱</div>
+                <h5>Always Learning</h5>
+                <p class="text-muted">New technologies, new adventures</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
       <!-- Currently Learning -->
       <div class="mt-5">
-        <h3 class="text-center mb-4">🌱 Currently Learning</h3>
+        <h3 class="text-center mb-4">Currently Learning</h3>
         <div class="row g-3">
           <div class="col-md-6">
             <div class="learning-card p-3 rounded">
               <div class="d-flex justify-content-between align-items-center mb-2">
                 <h6 class="mb-0">React.js</h6>
-                <span class="badge bg-primary">75%</span>
+                <span class="badge bg-primary">65%</span>
               </div>
               <div class="progress mb-2" style="height: 8px;">
-                <div class="progress-bar bg-gradient" style="width: 75%"></div>
+                <div class="progress-bar bg-gradient" style="width: 65%"></div>
               </div>
               <small class="text-muted">Building interactive UIs</small>
             </div>
@@ -173,7 +285,7 @@
             <div class="learning-card p-3 rounded">
               <div class="d-flex justify-content-between align-items-center mb-2">
                 <h6 class="mb-0">Node.js</h6>
-                <span class="badge bg-success">60%</span>
+                <span class="badge bg-success">50%</span>
               </div>
               <div class="progress mb-2" style="height: 8px;">
                 <div class="progress-bar bg-success" style="width: 60%"></div>
@@ -185,10 +297,10 @@
             <div class="learning-card p-3 rounded">
               <div class="d-flex justify-content-between align-items-center mb-2">
                 <h6 class="mb-0">Database </h6>
-                <span class="badge bg-warning">65%</span>
+                <span class="badge bg-warning">40%</span>
               </div>
               <div class="progress mb-2" style="height: 8px;">
-                <div class="progress-bar bg-warning" style="width: 55%"></div>
+                <div class="progress-bar bg-warning" style="width: 40%"></div>
               </div>
               <small class="text-muted">SQL & NoSQL databases</small>
             </div>
@@ -213,7 +325,7 @@
   <!-- Projects Section -->
   <section id="projects" class="py-3">
     <div class="container">
-      <h2 class="text-center mb-3">📂 Featured Projects</h2>
+      <h2 class="text-center mb-3">Featured Projects</h2>
       <p class="text-center mb-4">A selection of projects demonstrating my technical expertise</p>
       
       <div class="row g-4">
@@ -244,7 +356,7 @@
             </div>
             <p>A smart farming platform that provides farmers with weather data and agricultural insights to optimize crop management and farming decisions.</p>
             <div class="mt-auto">
-              <a href="https://shamrockagri.vercel.app/" target="_blank" class="btn btn-primary pulse-btn">Live Demo</a>
+              <a href="https://farming-guidance.vercel.app/" target="_blank" class="btn btn-primary pulse-btn">Live Demo</a>
             </div>
           </div>
         </div>
@@ -262,9 +374,48 @@
             </div>
             <p>A modern real estate platform for property management and growth tracking, featuring interactive dashboards and comprehensive property analytics. I'm currently working on this new startup and it's still under development.</p>
             <div class="mt-auto">
-              <a href="https://prop-growth-x1.vercel.app/" target="_blank" class="btn btn-primary pulse-btn">Live Demo</a>
+              <a href="https://www.propgrowthx.com/" target="_blank" class="btn btn-primary pulse-btn">Live Demo</a>
             </div>
           </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="skill-card p-4 rounded h-100 project-card">
+            <div class="project-logo">
+              <img src="https://png.pngtree.com/png-clipart/20240306/original/pngtree-infinity-symbol-black-png-png-image_14520365.png" alt="Logo" class="project-logo-img">
+            </div>
+            <h3>ReGlass</h3>
+            <div class="project-tags mb-3">
+              <span class="skill-tag animate-tag" style="animation-delay: 0.1s;">Html</span>
+              <span class="skill-tag animate-tag" style="animation-delay: 0.2s;">Supabase</span>
+              <span class="skill-tag animate-tag" style="animation-delay: 0.3s;">CSS</span>
+            </div>
+            <p>This project on Broken Glass Recycling focuses on spreading awareness, researching sustainable recycling methods, and proposing feasible applications that can contribute towards a circular economy and a greener future.</p>
+            <div class="mt-auto">
+              <a href="https://clear-future-1m1b.vercel.app/" target="_blank" class="btn btn-primary pulse-btn">Live Demo</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="skill-card p-4 rounded h-100 project-card">
+            <div class="project-icon">🎮</div>
+            <h3>Time Jumper Rewind Quest</h3>
+            <div class="project-tags mb-3">
+              <span class="skill-tag animate-tag" style="animation-delay: 0.1s;">TypeScript</span>
+              <span class="skill-tag animate-tag" style="animation-delay: 0.2s;">React</span>
+              <span class="skill-tag animate-tag" style="animation-delay: 0.3s;">Tailwind CSS</span>
+            </div>
+            <p>An interactive time-travel adventure game built with modern web technologies, featuring engaging gameplay and smooth animations.</p>
+            <div class="mt-auto">
+              <a href="https://time-jumper.vercel.app/" target="_blank" class="btn btn-primary pulse-btn">Live Demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="text-center mt-4">
+          <a href="https://github.com/ZXarus?tab=repositories" target="_blank" class="btn btn-outline-primary pulse-btn">
+            <i class="fab fa-github me-2"></i>View All Repositories
+          </a>
         </div>
       </div>
 
@@ -298,6 +449,156 @@
               <div class="now-icon rocket-icon">🚀</div>
               <h5>Building</h5>
               <p>Full-Stack Projects</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="py-3">
+    <div class="container">
+      <h2 class="text-center mb-3">💼 Experience</h2>
+      <p class="text-center mb-4">Professional experience and freelance work</p>
+      
+      <div class="row g-4">
+        <!-- Professional Mode -->
+        <div class="mode-content recruiter-mode">
+          <div class="col-12">
+            <div class="experience-card p-4 rounded">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <div>
+                  <h4>Freelance Web Developer for PropGrowthX</h4>
+                  <h6 class="text-muted">Self-Employed</h6>
+                </div>
+                <span class="badge bg-primary">Aug 2024 - Present</span>
+              </div>
+              <ul class="mb-3">
+                <li>Developing the startup's website and platform architecture</li>
+                <li>Managing complete project lifecycle from requirements to deployment</li>
+                <li>Maintaining high client satisfaction and project quality standards</li>
+                <li>Contributing to strategic planning and technical decision-making</li>
+              </ul>
+              <div class="experience-tags">
+                <span class="skill-tag">TypeScript</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">Project Management</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-12 mt-4">
+            <div class="experience-card p-4 rounded">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <div>
+                  <h4>Green Intern</h4>
+                  <h6 class="text-muted">1M1B</h6>
+                </div>
+                <span class="badge bg-success">Aug 2024 - Oct 2024</span>
+              </div>
+              <ul class="mb-3">
+                <li>Developed a comprehensive web application with startup potential</li>
+                <li>Collaborated with cross-functional teams to deliver project milestones</li>
+                <li>Enhanced technical documentation and communication skills</li>
+                <li>Contributed to sustainable technology solutions and green initiatives</li>
+              </ul>
+              <div class="experience-tags">
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">API Integration</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Casual Mode -->
+        <div class="mode-content casual-mode" style="display: none;">
+          <div class="col-12">
+            <div class="experience-card p-4 rounded">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                 <div>
+                  <h4>Freelance Web Developer for PropGrowthX</h4>
+                  <h6 class="text-muted">Self-Employed</h6>
+                </div>
+                <span class="badge bg-primary"> Aug 2025 - Present</span>
+              </div>
+              <ul class="mb-3">
+                <li> Helping the startup build there website</li>
+                <li> Managing the project lifecycle from requirements to partial deployment</li>
+                <li> Maintaining the client satisfaction to its best</li>
+                <li> Helping the founders and the team in brainstorming session and in overall growth of the startup</li>
+              </ul>
+              <div class="experience-tags">
+                <span class="skill-tag">Typescript</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">CSS</span>
+                <span class="skill-tag">Project Management</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-12 mt-4">
+            <div class="experience-card p-4 rounded">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <div>
+                  <h4>Green Intern</h4>
+                  <h6 class="text-muted"> 1M1B </h6>
+                </div>
+                <span class="badge bg-success">Aug 2025 - Oct 2025</span>
+              </div>
+              <ul class="mb-3">
+                <li>Built a major website which can be converted to a startup.</li>
+                <li>Collaborated with other interns members to Successfully complete the tasks.</li>
+                <li>Improved myself in the documentation and explaining what is required</li>
+                <li></li>
+              </ul>
+              <div class="experience-tags">
+                <span class="skill-tag">React</span>
+                <span class="skill-tag"> Html</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">Backend integration</span>
+              </div>
+            </div>
+          </div>
+        </div>  
+    </div>
+  </section>
+
+  <!-- Resume Section -->
+  <section id="resume" class="py-3">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+          <div class="resume-card p-4 rounded">
+            <!-- Professional Mode -->
+            <div class="mode-content recruiter-mode">
+              <h3 class="mb-3">📄 Professional Resume</h3>
+              <p class="mb-4">Download my comprehensive resume with detailed work experience, technical skills, and educational background for your review.</p>
+              <div class="resume-buttons">
+                <a href="#" class="btn btn-primary btn-lg me-3 pulse-btn" onclick="alert('Resume download will be available soon!')">
+                  <i class="fas fa-download me-2"></i>Download PDF
+                </a>
+                <a href="https://www.linkedin.com/in/charan-reddy-m-2694971b6/" target="_blank" class="btn btn-outline-primary btn-lg pulse-btn">
+                  <i class="fab fa-linkedin me-2"></i>LinkedIn Profile
+                </a>
+              </div>
+            </div>
+            
+            <!-- Casual Mode -->
+            <div class="mode-content casual-mode" style="display: none;">
+              <h3 class="mb-3">📄 My Story on a Paper</h3>
+              <p class="mb-4">Want to know more about my journey? Grab my resume to see how I've grown from a curious student to a passionate developer!</p>
+              <div class="resume-buttons">
+                <a href="#" class="btn btn-primary btn-lg me-3 pulse-btn" onclick="alert('Resume coming soon - it\'s going to be awesome!')">
+                  <i class="fas fa-download me-2"></i>Get My Resume
+                </a>
+                <a href="https://www.linkedin.com/in/charan-reddy-m-2694971b6/" target="_blank" class="btn btn-outline-primary btn-lg pulse-btn">
+                  <i class="fab fa-linkedin me-2"></i>Let's Connect
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -353,12 +654,24 @@
     });
 
     // Typed.js for hero section
-    const typed = new Typed("#typed-text", {
-      strings: ["Charan Reddy", "a Web Developer", "an AI Explorer", "a Problem Solver"],
-      typeSpeed: 60,
-      backSpeed: 40,
-      loop: true
-    });
+    let typed;
+    const typedStrings = {
+      casual: ["Charan Reddy", "a Web Developer", "an AI Explorer", "a Problem Solver"],
+      recruiter: ["Charan Reddy", "a CS Student", "a Web Developer", "a Software Engineer"],
+      developer: ["Charan Reddy", "a Full-Stack Dev", "a Code Ninja", "a Tech Enthusiast"]
+    };
+    
+    function initTyped(mode = 'recruiter') {
+      if (typed) typed.destroy();
+      typed = new Typed("#typed-text", {
+        strings: typedStrings[mode],
+        typeSpeed: 60,
+        backSpeed: 40,
+        loop: true
+      });
+    }
+    
+    initTyped();
 
     // Floating particles animation
     function createParticles() {
@@ -483,6 +796,39 @@
       card.style.transition = 'all 0.6s ease';
       observer.observe(card);
     });
+
+    // Mode switching functionality
+    const modeButtons = document.querySelectorAll('.mode-btn');
+    const modeContents = document.querySelectorAll('.mode-content');
+    
+    modeButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const mode = button.dataset.mode;
+        
+        // Update active button
+        modeButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        
+        // Show/hide content
+        modeContents.forEach(content => {
+          if (content.classList.contains(mode + '-mode')) {
+            content.style.display = 'block';
+          } else {
+            content.style.display = 'none';
+          }
+        });
+        
+        // Update body class for styling
+        document.body.className = document.body.className.replace(/mode-\w+/g, '');
+        document.body.classList.add('mode-' + mode);
+        
+        // Update typed text
+        initTyped(mode);
+      });
+    });
+    
+    // Set initial mode
+    document.body.classList.add('mode-recruiter');
   </script>
 
   <footer>

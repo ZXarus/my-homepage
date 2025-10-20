@@ -1529,6 +1529,118 @@ h1, h2, h3, h4, h5 {
   --bg-gradient: linear-gradient(135deg, #fafafa 0%, #ffffff 50%, #f5f5f5 100%);
 }
 
+/* Resume, Achievement, and Repository Cards - Mode Specific */
+body.mode-recruiter .resume-card,
+body.mode-recruiter .achievement-card,
+body.mode-recruiter .repo-card {
+  background:  --primary-color: #2563eb;
+  --secondary-color: #64748b;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 6px !important;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+body.mode-casual .resume-card,
+body.mode-casual .achievement-card,
+body.mode-casual .repo-card {
+  background: linear-gradient(135deg,  #8b5cf6;
+  --secondary-color: #06b6d4;
+  --accent-color: #ec4899;) !important;
+  border: 2px solid transparent !important;
+  border-radius: 16px !important;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.12) !important;
+  position: relative;
+  overflow: hidden;
+  animation: floatCard 6s ease-in-out infinite;
+}
+
+body.mode-recruiter .resume-card::before,
+body.mode-recruiter .achievement-card::before,
+body.mode-recruiter .repo-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #2563eb !important;
+}
+
+body.mode-casual .resume-card::before,
+body.mode-casual .achievement-card::before,
+body.mode-casual .repo-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #8b5cf6, #06b6d4, #ec4899, #f59e0b) !important;
+  animation: shimmer 3s linear infinite;
+}
+
+body.mode-recruiter .resume-card:hover,
+body.mode-recruiter .achievement-card:hover,
+body.mode-recruiter .repo-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important;
+  transform: translateY(-2px) !important;
+}
+
+body.mode-casual .resume-card:hover,
+body.mode-casual .achievement-card:hover,
+body.mode-casual .repo-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.3) !important;
+}
+
+.achievement-card {
+  text-align: center;
+}
+
+.achievement-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.achievement-card h5,
+.repo-card h6 {
+  color: #dc143c !important;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.repo-language {
+  background: linear-gradient(45deg, #dc143c, #e6b800) !important;
+  color: #ffffff !important;
+  padding: 4px 12px !important;
+  border-radius: 15px;
+  font-size: 0.75rem !important;
+  font-weight: 600;
+  margin: 3px !important;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.repo-language:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(220, 20, 60, 0.3);
+}
+
+.repo-stats {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.repo-stats i {
+  margin-right: 4px;
+}
+
 /* Dark Theme */
 body[data-theme="dark"] {
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1f1f1f 100%) !important;
@@ -1590,6 +1702,79 @@ body[data-theme="dark"] p {
   border-color: #e6b800;
 }
 
+/* Experience Cards */
+.experience-card {
+  background: linear-gradient(135deg, #ffffff, #f8f9fa) !important;
+  border: 2px solid #e9ecef !important;
+  border-radius: 12px;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #dc143c, #e6b800);
+}
+
+.experience-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(220, 20, 60, 0.2);
+  border-color: #00e673;
+}
+
+.experience-card h4 {
+  color: #dc143c !important;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.experience-card h6 {
+  color: #6b7280 !important;
+  font-weight: 500;
+}
+
+.experience-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.experience-card ul {
+  padding-left: 20px;
+}
+
+.experience-card ul li {
+  margin-bottom: 8px;
+  color: #4a5568 !important;
+}
+
+/* Dark theme for experience cards */
+body[data-theme="dark"] .experience-card {
+  background: linear-gradient(135deg, #333333, #404040) !important;
+  border-color: #555555 !important;
+  color: #e0e0e0 !important;
+}
+
+body[data-theme="dark"] .experience-card h4 {
+  color: #ffffff !important;
+}
+
+body[data-theme="dark"] .experience-card h6 {
+  color: #cccccc !important;
+}
+
+body[data-theme="dark"] .experience-card ul li {
+  color: #cccccc !important;
+}
+
 .learning-card h6 {
   color: #dc143c !important;
   font-weight: 600;
@@ -1601,6 +1786,349 @@ body[data-theme="dark"] p {
 
 .bg-gradient {
   background: linear-gradient(90deg, #dc143c, #e6b800) !important;
+}
+
+/* Mode Selector */
+.mode-selector {
+  border-top: 1px solid rgba(230, 184, 0, 0.3);
+  padding-top: 10px;
+}
+
+.mode-btn {
+  background: transparent;
+  border: 1px solid rgba(230, 184, 0, 0.5);
+  color: #e6b800;
+  padding: 6px 16px;
+  margin: 0 5px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.mode-btn:hover {
+  background: rgba(230, 184, 0, 0.1);
+  border-color: #e6b800;
+}
+
+.mode-btn.active {
+  background: linear-gradient(45deg, #dc143c, #e6b800);
+  border-color: #dc143c;
+  color: white;
+}
+
+/* Mode-specific color schemes and styling */
+
+/* Professional Mode - Corporate Blue/Gray */
+body.mode-recruiter {
+  --primary-color: #2563eb;
+  --secondary-color: #64748b;
+  --accent-color: #1e293b;
+}
+
+body.mode-recruiter .hero {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 30%, #475569 70%, #64748b 100%) !important;
+}
+
+body.mode-recruiter section {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+  border-radius: 8px !important;
+}
+
+body.mode-recruiter .skill-card,
+body.mode-recruiter .project-card,
+body.mode-recruiter .learning-card,
+body.mode-recruiter .contact-card,
+body.mode-recruiter .experience-card {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  animation: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+  border-radius: 6px !important;
+}
+
+body.mode-recruiter .skill-card:hover,
+body.mode-recruiter .project-card:hover,
+body.mode-recruiter .learning-card:hover,
+body.mode-recruiter .contact-card:hover,
+body.mode-recruiter .experience-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important;
+  transform: translateY(-2px) !important;
+}
+
+body.mode-recruiter .skill-card::before,
+body.mode-recruiter .project-card::before,
+body.mode-recruiter .learning-card::before,
+body.mode-recruiter .contact-card::before,
+body.mode-recruiter .experience-card::before {
+  background: #2563eb !important;
+  height: 2px !important;
+}
+
+body.mode-recruiter .skill-tag {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  font-weight: 500;
+  border-radius: 4px !important;
+  font-size: 0.8rem !important;
+  padding: 4px 12px !important;
+}
+
+body.mode-recruiter .particles {
+  display: none;
+}
+
+body.mode-recruiter .btn-primary {
+  background: #2563eb !important;
+  border-color: #2563eb !important;
+  box-shadow: none !important;
+  border-radius: 4px !important;
+}
+
+body.mode-recruiter .btn-primary:hover {
+  background: #1d4ed8 !important;
+  border-color: #1d4ed8 !important;
+}
+
+body.mode-recruiter .btn-outline-light {
+  border-color: #64748b !important;
+  color: #64748b !important;
+}
+
+body.mode-recruiter .btn-outline-light:hover {
+  background: #64748b !important;
+  color: #ffffff !important;
+}
+
+body.mode-recruiter h2, 
+body.mode-recruiter h3 {
+  color: #1e293b !important;
+  font-weight: 600 !important;
+}
+
+body.mode-recruiter .text-primary {
+  color: #2563eb !important;
+  text-shadow: none !important;
+}
+
+body.mode-recruiter .progress-bar {
+  background: #2563eb !important;
+}
+
+body.mode-recruiter .badge {
+  background: #64748b !important;
+}
+
+/* Casual Mode - Vibrant & Creative */
+body.mode-casual {
+  --primary-color: #8b5cf6;
+  --secondary-color: #06b6d4;
+  --accent-color: #ec4899;
+}
+
+body.mode-casual .hero {
+  background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 25%, #06b6d4 50%, #ec4899 75%, #f59e0b 100%) !important;
+  animation: gradientShift 8s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 25%, #06b6d4 50%, #ec4899 75%, #f59e0b 100%); }
+  50% { background: linear-gradient(135deg, #06b6d4 0%, #ec4899 25%, #f59e0b 50%, #8b5cf6 75%, #a855f7 100%); }
+}
+
+body.mode-casual section {
+  background: linear-gradient(135deg, #fdf4ff, #f0f9ff, #fef7ed) !important;
+  border: 2px solid transparent !important;
+  background-clip: padding-box;
+  box-shadow: 0 8px 32px rgba(139, 92, 246, 0.15) !important;
+  border-radius: 20px !important;
+  position: relative;
+  overflow: hidden;
+}
+
+body.mode-casual section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, #8b5cf6, #06b6d4, #ec4899, #f59e0b);
+  z-index: -1;
+  margin: -2px;
+  border-radius: inherit;
+}
+
+body.mode-casual .skill-card,
+body.mode-casual .project-card,
+body.mode-casual .learning-card,
+body.mode-casual .contact-card,
+body.mode-casual .experience-card {
+  background: linear-gradient(135deg, #ffffff, #fdf4ff, #f0f9ff) !important;
+  border: 2px solid transparent !important;
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.12) !important;
+  border-radius: 16px !important;
+  position: relative;
+  overflow: hidden;
+  animation: floatCard 6s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-8px) rotate(1deg); }
+  66% { transform: translateY(-4px) rotate(-1deg); }
+}
+
+body.mode-casual .skill-card:nth-child(even),
+body.mode-casual .project-card:nth-child(even) {
+  animation-delay: -3s;
+}
+
+body.mode-casual .skill-card::before,
+body.mode-casual .project-card::before,
+body.mode-casual .learning-card::before,
+body.mode-casual .contact-card::before,
+body.mode-casual .experience-card::before {
+  background: linear-gradient(90deg, #8b5cf6, #06b6d4, #ec4899, #f59e0b) !important;
+  height: 4px !important;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+body.mode-casual .skill-tag {
+  background: linear-gradient(45deg, #8b5cf6, #06b6d4) !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  border-radius: 20px !important;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+  animation: tagPulse 2s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes tagPulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4); }
+  50% { transform: scale(1.05); box-shadow: 0 6px 20px rgba(139, 92, 246, 0.6); }
+}
+
+body.mode-casual .skill-tag::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  animation: tagShine 3s infinite;
+}
+
+@keyframes tagShine {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+body.mode-casual .particles {
+  display: block;
+}
+
+body.mode-casual .btn-primary {
+  background: linear-gradient(45deg, #8b5cf6, #06b6d4) !important;
+  border-color: #8b5cf6 !important;
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4) !important;
+  border-radius: 25px !important;
+  animation: buttonGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes buttonGlow {
+  from { box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4); }
+  to { box-shadow: 0 8px 30px rgba(139, 92, 246, 0.8); }
+}
+
+body.mode-casual h2, 
+body.mode-casual h3 {
+  color: #8b5cf6 !important;
+  animation: textGradient 4s ease-in-out infinite;
+}
+
+@keyframes textGradient {
+  0%, 100% { color: #8b5cf6 !important; }
+  25% { color: #06b6d4 !important; }
+  50% { color: #ec4899 !important; }
+  75% { color: #f59e0b !important; }
+}
+
+body.mode-casual .text-primary {
+  background: linear-gradient(45deg, #8b5cf6, #06b6d4, #ec4899, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: rainbowText 3s linear infinite;
+}
+
+@keyframes rainbowText {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+/* Dark theme adjustments for Professional mode */
+body[data-theme="dark"].mode-recruiter {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%) !important;
+}
+
+body[data-theme="dark"].mode-recruiter section {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+body[data-theme="dark"].mode-recruiter .skill-card,
+body[data-theme="dark"].mode-recruiter .project-card,
+body[data-theme="dark"].mode-recruiter .learning-card,
+body[data-theme="dark"].mode-recruiter .contact-card,
+body[data-theme="dark"].mode-recruiter .experience-card {
+  background: #334155 !important;
+  border-color: #475569 !important;
+  color: #e2e8f0 !important;
+}
+
+body[data-theme="dark"].mode-recruiter h2,
+body[data-theme="dark"].mode-recruiter h3,
+body[data-theme="dark"].mode-recruiter h4,
+body[data-theme="dark"].mode-recruiter h5 {
+  color: #e2e8f0 !important;
+}
+
+/* Dark theme adjustments for Casual mode */
+body[data-theme="dark"].mode-casual {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%) !important;
+}
+
+body[data-theme="dark"].mode-casual section {
+  background: linear-gradient(135deg, #1a1a2e, #16213e) !important;
+  border-color: #8b5cf6 !important;
+}
+
+body[data-theme="dark"].mode-casual .skill-card,
+body[data-theme="dark"].mode-casual .project-card,
+body[data-theme="dark"].mode-casual .learning-card,
+body[data-theme="dark"].mode-casual .contact-card,
+body[data-theme="dark"].mode-casual .experience-card {
+  background: linear-gradient(135deg, #1a1a2e, #16213e) !important;
+  border-color: #8b5cf6 !important;
+  color: #e2e8f0 !important;
+}
+
+body[data-theme="dark"].mode-casual h2,
+body[data-theme="dark"].mode-casual h3,
+body[data-theme="dark"].mode-casual h4,
+body[data-theme="dark"].mode-casual h5 {
+  color: #e2e8f0 !important;
 }
 
 /* Enhanced Mobile Styles */
@@ -1615,5 +2143,19 @@ body[data-theme="dark"] p {
   
   .badge {
     font-size: 0.7rem;
+  }
+  
+  .mode-btn {
+    font-size: 0.75rem;
+    padding: 5px 12px;
+    margin: 2px;
+  }
+  
+  header {
+    padding: 8px 0 12px 0;
+  }
+  
+  body {
+    padding-top: 100px;
   }
 }
